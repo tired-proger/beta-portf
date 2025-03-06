@@ -46,7 +46,12 @@ const Hero = () => {
                 </div>
                 <div className={cl.box}>
                     <div className={cl.image}>
-                        <div className={cl.imageInner}></div>
+                        <div 
+                            className={cl.imageInner}
+                            style={{
+                                backgroundImage: `url(./image.jpg)`
+                            }}
+                        ></div>
                     </div>
                 </div>
             </div>
