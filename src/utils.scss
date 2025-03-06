@@ -1,0 +1,22 @@
+//collors
+$wrapperSize: 1200px;
+$bgColor: #121212;
+$mainColor: #d3992e;
+$cardBgColor: #161616;
+$textColor: #e2e2e2;
+$textSubColor: darkgrey;
+$secondColor: #272727;
+$bgLightColor: #171717;
+$shadowColor: rgba(0, 0, 0, 0.1);
+
+$tgColor: #29B4E4;
+$vkColor: #4B74A2;
+$postColor: #EEEEEE;
+
+%center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

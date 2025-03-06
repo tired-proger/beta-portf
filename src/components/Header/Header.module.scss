@@ -1,0 +1,34 @@
+@use "../../utils.scss" as *;
+
+.logo {
+    font-family: "Rubik Mono One", monospace;
+    font-size: 28px;
+    color: $textColor;
+}
+
+.wrapper {
+    min-width: 100%;
+}
+
+header {
+    max-width: $wrapperSize;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+
+    .link {
+        font-size: 18px;
+        color: $textColor;
+        padding: 6px 10px;
+    }
+}

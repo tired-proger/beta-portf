@@ -1,0 +1,98 @@
+@use "./utils.scss" as *;
+@use "sass:color";
+
+//common select
+.react-select-container {
+
+    //custom adding class for set styles if selectded which option (adding to react-select-container class)
+    &.selectedOptionValue {
+        & .react-select__control {
+            background: $textColor;
+        }
+    }
+
+    //part of choose option
+    .react-select__control {
+        background: color.adjust($textColor, $lightness: -10%);
+        border-color: $textSubColor;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 0px 0px 0px 1px color.adjust($textSubColor, $lightness: 20%);
+        } 
+
+        //selcted value box
+        .react-select__value-container {
+            color: $textColor;
+
+            // & .react-select__value-container--has-value {
+            //     background: $textColor;
+            // }
+        }   
+
+        //select indicator image
+        .css-tj5bde-Svg {
+            fill: color.adjust($textSubColor, $lightness: -20%);
+        }
+
+        //class of choose moment
+        &.react-select__control--is-focused {
+            background: $textColor;
+            border: none;
+            box-shadow: 0px 0px 0px 1px color.adjust($textSubColor, $lightness: -20%);
+        }
+
+        &.react-select_control--menu-is-open {
+            &:hover {
+                box-shadow: 0px 0px 0px 1px color.adjust($textSubColor, $lightness: -20%);
+            }
+        }
+
+        //disable blue effects on select control box
+        &.css-t3ipsp-control { border: none; border-color: transparent; }
+        &.css-t3ipsp-control:hover {
+            border: none;
+            border-color: transparent;
+        }
+    }
+
+    //option list
+    .react-select__menu {
+        background: $textSubColor;
+
+        //option list item
+        & .react-select__option {
+            color: $textColor;
+            transition: none;
+            cursor: pointer;
+
+            // &:hover {
+            //     background: $mainColor;
+            //     transition: none;
+            // }
+
+
+            &.react-select__option--is-focused {
+                background: color.adjust($mainColor, $lightness: 10%);
+                transition: none;
+                color: #fff;
+            }
+
+            &.react-select__option--is-selected {
+                background: $mainColor;
+            }
+
+            &:focus {
+                background: $mainColor;
+            }
+        }
+    }
+
+
+}
+
+//disable divider
+.react-select__indicator-separator {
+    display: none;
+}

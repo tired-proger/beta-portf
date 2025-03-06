@@ -1,0 +1,51 @@
+@use "../../../../utils.scss" as *;
+@use "sass:color";
+
+.linkItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    font-size: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    animation: fade 0.3s 1 ease 0.2s forwards;
+
+    &.last {
+        animation: fade 0.3s 1 ease 0.3s forwards;
+    }
+
+    @keyframes fade {
+        0%{
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.8);
+        }
+        100%{
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1);
+        }
+    }
+
+    &:hover {
+        & .svg {
+            fill: color.adjust($mainColor, $lightness: 20%);
+        }
+        & .linkText {
+            color: color.adjust($mainColor, $lightness: 20%);
+        }
+    }
+
+    & .svg {
+        fill: $textColor;
+        width: 20px;
+        height: 20px;
+    }
+
+    & .linkText {
+        color: $textColor;
+        font-size: 16px;
+    }
+}

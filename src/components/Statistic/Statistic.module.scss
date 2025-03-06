@@ -1,0 +1,41 @@
+@use "../../utils.scss" as *;
+
+.wrapper {
+    padding-top: 40px;
+    margin-bottom: 140px;
+}
+
+.box {
+    @extend %center;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.item {
+    text-align: center;
+
+    & img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.count {
+    margin-top: 8px;
+    font-size: 42px;
+    margin-bottom: 12px;
+    color: $textColor;
+    font-weight: bold;
+}
+
+.count + span {
+    margin-left: 5px;
+    font-size: 42px;
+    color: $textColor;
+    font-weight: bold;
+}
+
+.title {
+    color: $textSubColor;
+    font-size: 18px;
+}

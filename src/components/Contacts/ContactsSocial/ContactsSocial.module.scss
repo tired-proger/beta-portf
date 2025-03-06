@@ -1,0 +1,59 @@
+@use "../../../utils.scss" as *;
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 14px;
+    }
+
+    & .socialBtn {
+        display: block;
+        width: 220px;
+        border-radius: 5px;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+
+        & span {
+            color: #000;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        & img {
+            width: 26px;
+            height: 26px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+
+        &.tg {
+            background: $tgColor;
+
+            & span {
+                color: #fff;
+            }
+        }
+
+        &.vk {
+            background: $vkColor;
+
+            & span {
+                color: #fff;
+            }
+        }
+
+        &.post {
+            background: $postColor;
+        }
+    }
+}

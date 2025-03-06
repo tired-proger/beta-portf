@@ -1,0 +1,24 @@
+@use "../../../utils.scss" as *;
+
+.top {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.title {
+    color: $textColor;
+    font-size: 38px;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    font-size: 90px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px #232323;
+    text-transform: uppercase;
+    user-select: none;
+    z-index: -1;
+}

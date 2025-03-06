@@ -1,0 +1,30 @@
+@use "../../../utils.scss" as *;
+
+.skill {
+    filter: drop-shadow(0px 0px 10px 0px $shadowColor);
+}
+
+.bar {
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+
+.barText {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.skillText {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.animBar {
+    transition: all 1s ease;
+}
