@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { generateNumObjFromArray } from "../utils/generateNumObjFromArray";
-import { servicesList } from "../data/data";
+import { buttonList, servicesList } from "../data/data";
 
 const scrollContext = createContext(null);
 
@@ -8,15 +8,14 @@ function ScrollProvider({ children }) {
 
     const [scrollState, setScrollState] = useState({
         skillsBlockVisible: false,
-        servicesBlockVisible: generateNumObjFromArray(servicesList)
+        servicesBlockVisible: generateNumObjFromArray(servicesList),
+        worksBtnBlockVisible: generateNumObjFromArray(buttonList)
     });
-
-    console.log(generateNumObjFromArray(servicesList));
 
     const observerOptions = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.8
+        threshold: 0.3
     };
 
     const handleObserver = (entries, observer) => {
@@ -31,9 +30,17 @@ function ScrollProvider({ children }) {
                 }
 
                 //animation services list item event
-                if (entry.target.getAttribute("id").slice(0, 12) === "service_card") {
+                if (entry.target.getAttribute("id")?.slice(0, 12) === "service_card") {
                     const index = entry.target.getAttribute("id").slice(13);
                     setScrollState(state => ({ ...state, servicesBlockVisible: { ...state.servicesBlockVisible, [index]: true } }));
+                    observer.unobserve(entry.target);
+                    return;
+                }
+
+                //animation works btn list item event
+                if (entry.target.getAttribute("id")?.slice(0, 8) === "work_btn") {
+                    const index = entry.target.getAttribute("id").slice(9);
+                    setScrollState(state => ({ ...state, worksBtnBlockVisible: { ...state.worksBtnBlockVisible, [index]: true } }));
                     observer.unobserve(entry.target);
                     return;
                 }

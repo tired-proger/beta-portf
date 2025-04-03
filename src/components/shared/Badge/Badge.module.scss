@@ -7,4 +7,9 @@
     border: 2px solid $mainColor;
     border-radius: 9999px;
     user-select: none;
+
+    &.small {
+        font-size: 12px;
+        padding: 2px 4px;
+    }
 }

@@ -4,6 +4,8 @@ function getOrderMessage(inputsData, selectedOption) {
 
     return (
 `
+//////////////////////////////////////
+
 ✨<b>ПРИШЁЛ НОВЫЙ ЗАКАЗ!</b>
 
 ✨Информация о заказчике:
@@ -18,6 +20,8 @@ function getOrderMessage(inputsData, selectedOption) {
 
 🟢Сообщение: 
 ${message.value}
+
+//////////////////////////////////////
 `
     );
 }

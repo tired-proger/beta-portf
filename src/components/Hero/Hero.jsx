@@ -40,7 +40,12 @@ const Hero = () => {
                     <h1 className={cl.mainText}>Цаплин Матвей</h1>
                     <div className={cl.animText}>Я разработчик <span className={cl.span} ref={el}></span></div>
                     <div className={cl.boxText}>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum placeat ducimus ad, molestias alias aliquam doloribus corporis aperiam nesciunt sint quos iste veniam ab illo possimus autem unde voluptatibus. Cumque?
+                        <div>
+                            Если Вам нужен ответственный, опытный, доводящий до конца результат разработчик проектов различной сложности, то Вы находитесь на нужном сайте, листайте ниже и ознакамливайтесь с моими услугами
+                        </div>
+                        <div style={{ marginTop: "8px" }}>
+                            Буду рад поработать с Вами!
+                        </div>
                     </div>
                     <Button type="link" isHover={true}>Мои контакты</Button>
                 </div>

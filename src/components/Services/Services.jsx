@@ -4,7 +4,6 @@ import Title from '../shared/Title/Title';
 import { scrollContext } from '../../store/ScrollContext';
 import { servicesList } from '../../data/data';
 
-
 const Services = () => {
     
     const { scrollState, observer } = useContext(scrollContext);
@@ -42,4 +41,4 @@ const Services = () => {
     );
 }
 
-export default Services;
+export default React.memo(Services);

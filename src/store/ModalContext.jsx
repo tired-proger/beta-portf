@@ -4,7 +4,7 @@ const modalContext = createContext(null);
 
 export default function ModalProvider({ children }) {
 
-    //types modal ["skills", "project", "form"]
+    //types modal ["skills", "project", "form", "error"]
 
     const [modalData, setModalData] = useState({
         isOpen: false,

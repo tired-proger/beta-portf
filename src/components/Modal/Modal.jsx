@@ -4,6 +4,9 @@ import ModalSkills from './ModalSkills/ModalSkills';
 import ModalProject from './ModalProject/ModalProject';
 import {modalContext} from '../../store/ModalContext';
 import Button from '../shared/Button/Button';
+import ModalError from './ModalError/ModalError';
+import { manageScrollPanel } from '../../utils/manageScrollPanel';
+import ModalForm from './ModalForm/ModalForm';
 
 const Modal = () => {
 
@@ -13,10 +16,14 @@ const Modal = () => {
     useEffect(() => {
 
         if (modalData.isVisible) {
+            manageScrollPanel("hide");
             setIsAnimated(true);
         } else {
             setIsAnimated(false);
-            setTimeout(() => setModalData({ ...modalData, isOpen: false }), 300);
+            setTimeout(() => {
+                setModalData({ ...modalData, isOpen: false });
+                manageScrollPanel("show");
+            }, 300);   
         }
 
     }, [modalData.isVisible]);
@@ -33,6 +40,7 @@ const Modal = () => {
                 { modalData.type === "skills" && <ModalSkills /> }
                 { modalData.type === "project" && <ModalProject data={modalData.data} /> }
                 { modalData.type === "form" && <ModalForm data={modalData.data} /> }
+                { modalData.type === "error" && <ModalError data={modalData.data} /> }
 
                 <div className={cl.footer}>
                     <Button size="small" clickHandler={closeHandler} isHover={true}>Закрыть</Button>
@@ -43,4 +51,4 @@ const Modal = () => {
     );
 };
 
-export default Modal;
+export default React.memo(Modal);

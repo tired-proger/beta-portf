@@ -5,27 +5,17 @@
 
     & > .title {
         font-size: 20px;
-        text-align: center;;
+        text-align: center;
         margin-bottom: 16px;
-    }
 
-    & > .image {
-        position: relative;
-        margin-bottom: 12px;
-        height: 220px;
-        overflow: hidden;
-        border-radius: 8px;
-        box-shadow: 0px 0px 30px 0px rgba(211, 153, 46, 0.1);
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
+        @media (max-width: 500px) {
+            font-size: 18px;
+            margin-bottom: 14px;
         }
     }
 
     & > .info {
+        padding: 0px 10px;
 
         & > .titles {
             display: flex;
@@ -37,53 +27,45 @@
             & .desc {
                 font-size: 18px;
                 font-weight: bold;
+
+                @media (max-width: 500px) {
+                    font-size: 16px;
+                }
             }
         }
 
         & > .links {
             margin-bottom: 12px;
 
-            & .linksTitle {
-                color: $mainColor;
-                font-size: 16px;
-                margin-bottom: 4px;
-                text-decoration: underline;
-            }
-
             & .linksBox {
                 display: flex;
                 gap: 16px;
                 flex-wrap: wrap;
+
+                @media (max-width: 432px) {
+                    gap: 4px;
+                }
             }
         }
 
         & > .features {
             margin-bottom: 12px;
 
-            & .featuresTitle {
-                color: $mainColor;
-                font-size: 16px;
-                margin-bottom: 4px;
-                text-decoration: underline;
-            }
-
             & .featuresList {
 
                 & .featureItem {
                     color: color.adjust($mainColor, $lightness: 20%);
                     font-size: 16px;
+
+                    @media (max-width: 500px) {
+                        font-size: 12px;
+                    }
                 }
 
             }
         }
 
         & > .tech {
-
-            & .techTitle {
-                color: $mainColor;
-                font-size: 16px;
-                margin-bottom: 6px;
-            }
 
             .techBox {
                 display: flex;
@@ -93,4 +75,11 @@
         }
     }
 
+}
+
+.blockTitle {
+    color: $textSubColor;
+    font-weight: bold;
+    font-size: 14.5px;
+    margin-bottom: 5px;
 }

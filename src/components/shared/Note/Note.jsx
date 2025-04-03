@@ -6,7 +6,7 @@ const Note = ({ setImage, children, size, styles }) => {
     return (
         <div className={`${cl.note} ${size === "small" ? cl.noteSmall : ""}`} style={styles}>
             {setImage && <img className={cl.noteImg} src={QuestionImage} alt="note image" />}
-            <div className={cl.noteText}>{children}</div>
+            <span className={cl.noteText}>{children}</span>
         </div>  
     );
 }

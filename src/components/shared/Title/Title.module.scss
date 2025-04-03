@@ -8,6 +8,8 @@
 .title {
     color: $textColor;
     font-size: 38px;
+
+    @include adaptiv-font(38, 30, 820px);
 }
 
 .text {
@@ -21,4 +23,6 @@
     text-transform: uppercase;
     user-select: none;
     z-index: -1;
+
+    @include adaptiv-font(90, 42, 820px);
 }

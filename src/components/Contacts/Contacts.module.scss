@@ -9,10 +9,19 @@
 .box {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 820px) {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 .inputs {
     flex: 0 1 460px;
+
+    @media (max-width: 820px) {
+        flex: 0 1 auto;
+    }
 }
 
 .title {
@@ -44,6 +53,15 @@
         background: color.adjust($textColor, $lightness: -10%);
         border: none;
 
+        @media (max-width: 820px) {
+            max-width: 100%;
+        }
+
+        &.loading {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
         &:focus {
             background: $textColor;
             box-shadow: 0px 0px 0px 2px color.adjust($textSubColor, $lightness: -20%);
@@ -70,11 +88,34 @@
         box-shadow: 0px 0px 0px 0px $textSubColor;
         background: color.adjust($textColor, $lightness: -10%);
         min-height: 130px;
+        
+        @media (max-width: 820px) {
+            max-width: 100%;
+        }
+
+        &.loading {
+            pointer-events: none;
+            opacity: 0.5;
+        }
 
         &:focus {
             background: $textColor;
             box-shadow: 0px 0px 0px 2px color.adjust($textSubColor, $lightness: -20%);
         }
+    }
+
+    .error {
+        color: $mainColor;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 16px;
+        margin-top: 6px;
+
+        & img {
+            width: 16px;
+            height: 16px;
+        } 
     }
 
 }
@@ -104,5 +145,10 @@
         width: 2px;
         background-color: $textSubColor;
         z-index: -1;
+
+        @media (max-width: 820px) {
+            height: 2px;
+            width: 80%;
+        }
     }
 }

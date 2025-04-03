@@ -7,6 +7,19 @@
     display: flex;
     justify-content: center;
     gap: 60px;
+    flex-wrap: wrap;
+
+    @media (max-width: 640px) {
+        gap: 30px;
+    }
+
+    @media (max-width: 400px) {
+        gap: 12px;
+    }
+
+    @media (max-width: 372px) {
+        gap: 18px;
+    }
 }
 
 .bottom {

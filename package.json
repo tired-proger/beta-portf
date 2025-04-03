@@ -16,6 +16,7 @@
     "react-dom": "^18.3.1",
     "react-select": "^5.10.0",
     "sass": "^1.81.0",
+    "swiper": "^11.2.5",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {

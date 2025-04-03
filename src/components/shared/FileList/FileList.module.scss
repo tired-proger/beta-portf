@@ -1,0 +1,90 @@
+@use "../../../utils.scss" as *;
+@use "sass:color";
+
+.box {
+    margin-top: 10px;
+
+    .boxItem {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #1e1e1e;
+        border-radius: 6px;
+        padding: 10px;
+        padding-right: 16px;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .img {
+            width: 46px;
+            height: 46px;
+        }
+
+        .content {
+
+
+            .top {
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                margin-bottom: 4px;
+            }
+    
+            .title {
+                max-width: 260px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 18px;
+
+                @media (max-width: 450px) {
+                    max-width: 220px;
+                }
+
+                @media (max-width: 390px) {
+                    max-width: 180px;
+                }
+
+                @media (max-width: 345px) {
+                    max-width: 160px;
+                }
+            }
+
+        }
+
+        .btn {
+            margin-left: auto;
+            width: 36px;
+            height: 36px;
+            position: relative;
+            padding: 6px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $mainColor;
+
+            &:hover {
+                background-color: color.adjust($mainColor, $lightness: -10%);
+            }
+
+            .loading {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+
+            .trash {
+                transform: translate(0.5px, 0.5px);
+                position: absolute;
+                width: 70%;
+                height: 70%;
+                fill: $textColor;
+            }
+        }
+
+    }
+}

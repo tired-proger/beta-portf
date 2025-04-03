@@ -5,8 +5,8 @@
     left: 0;
     top: 0;
     padding: 20px;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 9999;
     display: flex;
@@ -15,6 +15,7 @@
     visibility: hidden;
     pointer-events: none;
     opacity: 0;
+    overflow: hidden;
     transition: all .3s ease;
 
     &.active {
@@ -34,12 +35,14 @@
     & .modal {
         background-color: $bgLightColor;
         flex: 0 1 580px;
+        max-width: 580px;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0px 0px 22px 0px $shadowColor;
         transform: scale(0.8);
         opacity: 0;
         pointer-events: none;
+        overflow: hidden;
         transition: all .3s ease;
 
         & .footer {

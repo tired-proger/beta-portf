@@ -11,6 +11,11 @@
         }
     }
 
+    //style for input disabled state
+    &.react-select--is-disabled {
+        opacity: 0.5;
+    }
+
     //part of choose option
     .react-select__control {
         background: color.adjust($textColor, $lightness: -10%);
